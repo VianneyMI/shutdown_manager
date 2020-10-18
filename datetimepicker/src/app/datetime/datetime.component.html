@@ -1,10 +1,14 @@
 
 <mat-form-field>
     <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date" [formControl]="dateControl"
-      [min]="minDate" [max]="maxDate" [disabled]="disabled">
+      [min]="minDate" [max]="maxDate" [disabled]="disabled" (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <ngx-mat-datetime-picker #picker [showSpinners]="showSpinners" [showSeconds]="showSeconds" [stepHour]="stepHour"
       [stepMinute]="stepMinute" [stepSecond]="stepSecond" [touchUi]="touchUi" [color]="color"
-      [enableMeridian]="enableMeridian" [disableMinute]="disableMinute" [hideTime]="hideTime">
+      [enableMeridian]="enableMeridian" [disableMinute]="disableMinute" [hideTime]="hideTime"   >
     </ngx-mat-datetime-picker>
   </mat-form-field>
+
+  <div class="example-events">
+    <div *ngFor="let e of events">{{e}}</div>
+  </div>

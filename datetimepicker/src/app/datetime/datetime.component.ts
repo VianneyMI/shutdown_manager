@@ -1,6 +1,8 @@
+import { MatDatetimePickerInputEvent } from '@angular-material-components/datetime-picker';
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 
 @Component({
@@ -44,4 +46,9 @@ export class DatetimeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public events: string[] = [];
+
+  addEvent(type: string, event: MatDatetimePickerInputEvent<Date>) {
+    this.events.push(`${type}: ${event.value}`);
+  }
 }
