@@ -3,7 +3,7 @@ import { Component, OnInit,ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
-
+import * as shutdown from 'electron-shutdown-command';
 
 @Component({
   selector: 'app-datetime',
@@ -50,5 +50,12 @@ export class DatetimeComponent implements OnInit {
 
   addEvent(type: string, event: MatDatetimePickerInputEvent<Date>) {
     this.events.push(`${type}: ${event.value}`);
+      shutdown.shutdown({
+        force: true,
+        timerseconds: 60,
+        sudo: true,
+        debug: true,
+        quitapp: true
+      });
   }
 }
