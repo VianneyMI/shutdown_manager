@@ -1,2 +1,2 @@
-# Tkinter Spinbox :
-http://effbot.org/tkinterbook/spinbox.htm
+* Tkinter Spinbox : http://effbot.org/tkinterbook/spinbox.htm
+* Restart, Log out : https://www.geeksforgeeks.org/gui-to-shutdown-restart-and-logout-from-the-pc-using-python/?ref=rp
